@@ -1,0 +1,21 @@
+Design Memo
+
+When modeling a social network, a graph is the data structure that needs to be used.
+It’s simple, really. The relationships between people are simply the connections between the nodes.
+So, in this data structure, each person is a node, and each friendship is a connection between the nodes.
+This data structure is perfect because graphs handle bidirectional connections as well as connections that change over time.
+This is what a social network needs: people connected with each other in many different directions.
+
+The problem with a plain list is that it doesn’t handle the relationships between the data.
+Yes, we could put the people in a list, but then we’d have to spend precious computer resources searching the list to find the people’s friendships.
+We could also use a tree, but this data structure enforces a parent/child relationship. 
+This isn’t what we need in a social network. People have many connections with each other, connections that don’t follow the tree data structure.
+This means that the connections between people in a tree data structure would be messy.
+
+The adjacency list data structure works well because it’s efficient in terms of computer resources.
+Adding a person takes on average O(1) time because we simply insert into a dictionary.
+Adding a friendship is just as efficient because we simply add the friend to the list of friends.
+Printing the data structure takes on average O(V + E) because we simply go through each person and each friendship.
+
+One drawback is that checking whether a friendship is a duplicate requires us to do a membership test on the list of friends.
+This takes on average O(n) because we have to go through the list. However, the adjacency list is much more efficient in terms of computer resources than the adjacency matrix.
